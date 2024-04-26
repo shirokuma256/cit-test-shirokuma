@@ -5,8 +5,8 @@ function padNumber(number, width) {
 
 // Write a function that prints a multiplication table for numbers up to 12.
 function multiplicationTable() {
-    for (let i = 1; i <= 9; i++) {
-      for (let j = 1; j <= 9; j++) {
+    for (let i = 1; i <= 12; i++) {
+      for (let j = 1; j <= 12; j++) {
         process.stdout.write(padNumber(i * j, 4))
         
       }

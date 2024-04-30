@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Cell Click</title>
+<style>
+  .clicked {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+
+<table id="myTable">
+  <tr>
+    <td class="class1">Cell 1</td>
+    <td class="class2">Cell 2</td>
+    <td class="class1">Cell 3</td>
+  </tr>
+  <tr>
+    <td class="class2">Cell 4</td>
+    <td class="class1">Cell 5</td>
+    <td class="class2">Cell 6</td>
+  </tr>
+</table>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // テーブル要素を取得
+  var table = document.getElementById('myTable');
+
+  // セルがクリックされたときの処理
+  function handleCellClick(event) {
+    // クリックされたセルのクラスを取得
+    var clickedClass = event.target.className;
+    
+    // すべてのセルを取得
+    var cells = table.getElementsByTagName('td');
+    
+    // 全てのセルに対して処理を実行
+    for (var i = 0; i < cells.length; i++) {
+      var cell = cells[i];
+      
+      // クリックされたセルと同じクラスを持つかどうかをチェック
+      if (cell.classList.contains(clickedClass)) {
+        // クリックされたセルに.clickedクラスを追加
+        cell.classList.add('clicked');
+      } else {
+        // クリックされたセルと異なるクラスを持つセルから.clickedクラスを削除
+        cell.classList.remove('clicked');
+      }
+    }
+  }
+
+  // クリックイベントをセルに追加
+  table.addEventListener('click', handleCellClick);
+});
+</script>
+
+</body>
+</html>

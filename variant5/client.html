@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table Client Variant 4-N</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Multiplication Table Variant 4-N</h1>
+  <table id="multiplication-table"></table>
+
+  <script>
+    // APIから九九の表を取得して表示する関数
+    async function displayMultiplicationTable() {
+      const response = await fetch('http://localhost:3000/api/multiplication-table');
+      const tableData = await response.json();
+
+      const tableElement = document.getElementById('multiplication-table');
+      tableElement.innerHTML = '';
+
+      tableData.forEach(rowData => {
+        const row = document.createElement('tr');
+        rowData.forEach(cellData => {
+          const cell = document.createElement('td');
+          cell.textContent = cellData.value;
+          cell.className = cellData.class;
+          row.appendChild(cell);
+        });
+        tableElement.appendChild(row);
+      });
+    }
+
+    // ページが読み込まれた時に九九の表を表示する
+    displayMultiplicationTable();
+  </script>
+</body>
+</html>

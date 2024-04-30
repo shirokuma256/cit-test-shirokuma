@@ -13,7 +13,7 @@
   <script>
     // APIから九九の表を取得して表示する関数
     async function displayMultiplicationTable() {
-      const response = await fetch('http://localhost:3000/api/multiplication-table');
+      const response = await fetch('https://localhost:3000/api/multiplication-table');
       const tableData = await response.json();
 
       const tableElement = document.getElementById('multiplication-table');

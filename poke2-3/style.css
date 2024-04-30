@@ -2,15 +2,14 @@ body {
     font-family: Arial, sans-serif;
   }
 
-
 #multiplication-table {
   margin: 0 auto; /* テーブルを中央に配置 */
   border-collapse: collapse; /* セル間の間隔をなくす */
 }
 
 #multiplication-table td {
-  width: 50px; /* セルの幅 */
-  height: 50px; /* セルの高さ */
+  width: 80px; /* セルの幅 */
+  height: 80px; /* セルの高さ */
   border: 1px solid black; /* 枠線を追加 */
   text-align: center; /* テキストを中央に配置 */
   background-color: #f2f2f2; /* 背景色を灰色に設定 */
@@ -21,6 +20,27 @@ body {
   border: 1px solid blue;
 }
 
-#poke {
-  background-color: yellow;
+#question {
+  text-align: center;
+  margin-top: 20px; /* 上部に余白を追加 */
+  font-size: 20px; /* フォントサイズを大きくする */
+}
+
+#score {
+  text-align: center;
+  margin-top: 20px; /* 上部に余白を追加 */
+  font-size: 20px; /* フォントサイズを大きくする */
+}
+
+ /* ======================================================= 
+    ===============ここからチェックボックス================== 
+    ======================================================= */
+
+#poke-mode{
+  text-align: center;
+}
+
+#poke-mode:checked  {
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }

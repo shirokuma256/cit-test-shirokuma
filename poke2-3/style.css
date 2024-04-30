@@ -18,5 +18,9 @@ body {
 
 #multiplication-table td.clicked {
   background-color: lightblue;
-  border: 2px solid blue;
+  border: 1px solid blue;
+}
+
+#poke {
+  background-color: yellow;
 }
